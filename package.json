@@ -1,0 +1,38 @@
+{
+  "name": "lnksbio",
+  "version": "0.0.1",
+  "description": "Link in bio done properly.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aemounib/lnksbio.git"
+  },
+  "author": "Mounib Elboujbaoui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aemounib/lnksbio/issues"
+  },
+  "homepage": "https://github.com/aemounib/lnksbio#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.22",
+    "nodemailer": "^6.4.10",
+    "nodemailer-sendgrid": "^1.0.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

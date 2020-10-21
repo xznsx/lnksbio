@@ -1,0 +1,40 @@
+html, body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+.btn {
+    font-weight: 300;
+}
+
+.navbar {
+    padding: 1.4em 0;
+}
+
+.logo {
+    max-height: 24px;
+}
+
+.lnk {
+    padding: 1em;
+
+}

@@ -1,0 +1,16 @@
+<%- include('../templates/header'); -%>
+<section class="main">
+    <%- include('../templates/flash'); -%>
+
+    <h5 class="mt-4 mb-3">Enter your user account's email address and we will send you a password reset link.</h5>
+    <form action="/auth/forgot" method="POST">
+        <div style="margin: 0;" class="form-row row">
+            <div class="form-group" style="width: 500px;">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success px-4">Get a link</button>
+    </form>
+</section>
+<%- include('../templates/footer'), -%>

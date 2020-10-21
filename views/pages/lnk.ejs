@@ -1,0 +1,40 @@
+<%- include('../templates/header'); -%>
+            <script>
+                function goBack() {
+                window.history.back();
+                }
+            </script>
+            <section class="main">
+                <% if (user) { %>
+                <h1 class="mb-3">Currently logged in as <%= user.displayname %>! </h1>
+                <% } %>
+                <%- include('../templates/flash'); -%>
+                <div class="row my-4">
+                    <div class="col-lg-6 col-sm-12">
+                        <form action="<%= '/lnk/' + lnk.id %> " method="POST">
+                            <div class="form-group">
+                                <label for="postURL">Instagram post URL</label>
+                                <input type="url" value="<%= lnk.post %>" id="postURL" name="postURL" class="form-control mb-3" required>
+                                <label for="linkURL">Link to be associated with the post</label>
+                                <input type="text" value="<%= lnk.link %>" id="linkURL" name="linkURL" class="form-control" required>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col"><button type="submit" class="btn btn-primary px-4">Update Lnk</button></div>
+                                <div class="col text-right"><button onclick="goBack()" class="btn btn-secondary px-4">Cancel</button></div>
+                            </div>
+                        </form>
+                        <form action="<%= "/lnk/" + lnk.id + "?_method=DELETE" %> " method="POST">
+                            <div class="row mt-4">
+                                <div class="col"><button type="submit" class="btn btn-danger px-4">Delete this Lnk</button></div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-lg-1 col-sm-0"></div>
+                    <%if (lnk) { %>
+                    <div class="col-lg-5 lnk col-sm-12">
+                        <a href="<%= lnk.link %>" target="_blank"><img src=<%= lnk.post + "media?size=l" %> class="img-fluid" alt=""></a></div>
+                    <%}%>
+                </div>
+            </section>
+<%- include('../templates/footer'), -%>

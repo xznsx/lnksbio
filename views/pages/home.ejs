@@ -1,0 +1,25 @@
+<%- include('../templates/header'); -%>
+            <section class="main">
+                <% if (user) { %>
+                <h1 class="mb-4">Hey <%= user.displayname %>! </h1>
+                <% } %>
+                <%- include('../templates/flash'); -%>
+                <form action="/lnk" method="POST" class="mt-4 mb-2 form-inline">
+                    <input type="url" placeholder="Instagram post URL" id="portURL" name="postURL" class="form-control col-lg col-sm-12 mr-2 mb-2"
+                        required>
+                    <input type="text" placeholder="Link to be associated with post." id="linkURL" name="linkURL"
+                        class="form-control col-lg col-sm-12 mr-2 mb-2" required>
+                    <button type="submit" class="btn btn-success px-4 mb-2">Lnk</button>
+                </form>
+
+                <div class="row">
+                    <%if (lnks.length > 0) { %>
+                    <% lnks.forEach(l => {%>
+                    <div class="col-lg-4 col-sm-12 col-md-6 lnk">
+                        <a class="lnkimg" href="<%= "/lnk/" + l.id %>"><img src=<%= l.post + "media?size=l" %> class="img-fluid"
+                                alt=""></a></div>
+                    <% });%>
+                    <%}%>
+                </div>
+            </section>
+<%- include('../templates/footer'), -%>
