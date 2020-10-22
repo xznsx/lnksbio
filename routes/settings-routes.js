@@ -30,7 +30,7 @@ router.post('/profile', filters.isAuthenticated, filters.usernameAvailableSettin
             }
         });
     }
-    if(username != req.user.username) {
+    if(username != req.user.username || email != req.user.email || displayname || req.user.displayname) {
         await User.updateOne({_id: req.user.id}, {
             displayname: displayname,
             username: username,
