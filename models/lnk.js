@@ -13,6 +13,10 @@ const linkSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    thumbnail_url: {
+        type: String,
+        required: true
+    },
     clicks: {
         type: Number,
         required: true,

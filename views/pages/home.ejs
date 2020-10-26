@@ -16,7 +16,7 @@
                     <%if (lnks.length > 0) { %>
                     <% lnks.forEach(l => {%>
                     <div class="col-lg-4 col-sm-12 col-md-6 lnk">
-                        <a class="lnkimg" href="<%= "/lnk/" + l.id %>"><img src=<%= l.post + "media?size=l" %> class="img-fluid"
+                        <a class="lnkimg" href="<%= "/lnk/" + l.id %>"><img src=<%= l.thumbnail_url %> class="img-fluid"
                                 alt=""></a></div>
                     <% });%>
                     <%}%>

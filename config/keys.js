@@ -12,5 +12,10 @@ module.exports = {
   email: {
       user: "",
       pass: ""
+  },
+  // For getting images thumbnails, go create a facebook APP.
+  facebookAPIKey: {
+      appId: "",
+      APIToken: "",
   }
 }

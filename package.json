@@ -27,7 +27,8 @@
     "nodemailer": "^6.4.10",
     "nodemailer-sendgrid": "^1.0.3",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
