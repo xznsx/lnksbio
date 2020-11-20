@@ -59,7 +59,7 @@ router.post('/register', filters.isNotAuthenticated, filters.usernameAvailable, 
         function (token, user, done) {
             // nodemailer transporter
             const transporter = nodemailer.createTransport({
-                host: "mail.mounib.me",
+                host: "mail.lnksbio.com",
                 port: 465,
                 secure: true, // use TLS
                 auth: {
@@ -69,7 +69,7 @@ router.post('/register', filters.isNotAuthenticated, filters.usernameAvailable, 
             });
             var mailOptions = {
                 to: user.email,
-                from: '"Lnksbio" <contact@mounib.me>',
+                from: '"Lnksbio" <contact@lnksbio.com>',
                 subject: 'Lnksbio Email Verification',
                 text: 'You are receiving this because you (or someone else) have signed up for a Lnksbio account.\n\n' +
                     'Please click on the following link, or paste this into your browser to verify your email:\n\n' +
@@ -83,7 +83,7 @@ router.post('/register', filters.isNotAuthenticated, filters.usernameAvailable, 
             // done(null); // to be remove later.
         }
     ], function (err) {
-        if(err) req.flash('Error trying to send a verification email, please contact us at contact@mounib.me.');
+        if(err) req.flash('Error trying to send a verification email, please contact us at contact@lnksbio.com.');
         res.redirect('/auth/login');
     })
 });
@@ -93,7 +93,7 @@ router.post('/register', filters.isNotAuthenticated, filters.usernameAvailable, 
 router.get("/register/verify/:token", async function (req, res) {
     await User.findOne({ verificationToken: req.params.token }).then(function (user) {
         if (!user) {
-            req.flash('error', 'Email verification link is invalid, please try again or contct us at contact@mounib.me.');
+            req.flash('error', 'Email verification link is invalid, please try again or contct us at contact@lnksbio.com.');
             return res.redirect('/auth/register');
         }
         user.verified = true;
@@ -139,7 +139,7 @@ router.post('/forgot', function (req, res) {
             if(user) {
                 // nodemailer transporter
                 const transporter = nodemailer.createTransport({
-                    host: "mail.mounib.me",
+                    host: "mail.lnksbio.com",
                     port: 465,
                     secure: true, // use TLS
                     auth: {
@@ -150,7 +150,7 @@ router.post('/forgot', function (req, res) {
     
                 var mailOptions = {
                     to: user.email,
-                    from: '"Lnksbio" <contact@mounib.me>',
+                    from: '"Lnksbio" <contact@lnksbio.com>',
                     subject: 'Lnksbio Password Reset',
                     text: 'You are receiving this because you (or someone else) have requested the reset of the password for your Lnksbio account.\n\n' +
                         'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
@@ -204,7 +204,7 @@ router.post('/reset/:token', function (req, res) {
         function (user, done) {
             // nodemailer transporter
             const transporter = nodemailer.createTransport({
-                host: "mail.mounib.me",
+                host: "mail.lnksbio.com",
                 port: 465,
                 secure: true, // use TLS
                 auth: {
@@ -214,7 +214,7 @@ router.post('/reset/:token', function (req, res) {
             });
             var mailOptions = {
                 to: user.email,
-                from: '"Lnksbio" <contact@mounib.me>',
+                from: '"Lnksbio" <contact@lnksbio.com>',
                 subject: 'Your password has been changed',
                 text: 'Hello,\n\n' +
                     'This is a confirmation that the password for your Lnksbio account ' + user.email + ' has just been changed.\n'
